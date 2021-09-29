@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://use.typekit.net/moi3nyw.css">
+	<title>스우파 플레이리스트</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+		html{background-color: #151517; margin: auto; min-width: 1440px;}
+		body{display: block; height: 100vh; background-image: url('background.png'); background-size: cover; background-repeat: no-repeat; background-position: center;}
+		header{height: 240px; margin: auto; position: relative; padding-top: 90px; padding-bottom: 30px;}
+		h1{color: white; text-align: center; font-family: fresno; font-size: 5em; padding-top: 50px; margin-top: 0; margin-bottom: 30px;}
+		h2{color: white; text-align: center; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; margin-top: 0px;}
+		section{display: block; padding-bottom: 90px;}
+		input[type="range"]{-webkit-appearance: none;}
+        input[type="range"]::-webkit-slider-runnable-track {
+          width: 540px;
+          height: 2px;
+          border: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border: none;
+          cursor: pointer;
+          height: 12px;
+          width: 12px;
+          border-radius: 300%;
+          background: #ffffff;
+          border: 2px solid #ffffff;
+          margin-top: -5px;
+          cursor: pointer;
+        }
+
+		p{font-family: 'Noto Sans KR', sans-serif; font-weight: 300; color: white; text-align: center; font-size: 0.8em;}
+		.slider{display: block; position: relative; margin: auto; width: 540px;}
+		.controller{height: 30px; padding-bottom: 60px;}
+		.line{display: flex; padding-bottom: 30px; justify-content: center; position: relative;}
+		.button{width: 250px; height:200px; margin-left: 15px; margin-right: 15px; cursor: pointer;}
+		#crew1{width : 100%; outline: 5px solid #f7fbf5;}
+		#crew2{width : 100%; outline: 5px solid #fd9fa0;}
+		#crew3{width : 100%; outline: 5px solid #3ddec1;}
+		#crew4{width : 100%; outline: 5px solid #fdf46e;}
+		#crew5{width : 100%; outline: 5px solid #f27b45;}
+		#crew6{width : 100%; outline: 5px solid #a173e0;}
+		#crew7{width : 100%; outline: 5px solid #ef1c25;}
+		#crew8{width : 100%; outline: 5px solid #81d6ed;}
+	</style>
+</head>
+<body>
+<header>
+	<h1>Street Woman Fighter</h1>
+	<h2>♬ Music player ♬</h2>
+</header>
+<section>
+<div class="controller">
+	<input type="range" id="vol" max="100" min="0" class="slider">
+</div>
+<div class="line">
+	<div class="button">	
+	<img id="crew1" src="before1.png">
+	<audio id="crew1Snd" src="song1.mp3"></audio>
+	</div>
+	<div class="button">
+	<img id="crew2" src="before2.png">
+	<audio id="crew2Snd" src="song2.mp3"></audio>
+	</div>
+	<div class="button">
+	<img id="crew3" src="before3.png">
+	<audio id="crew3Snd" src="song3.mp3"></audio>
+	</div>
+	<div class="button">
+	<img id="crew4" src="before4.png">
+	<audio id="crew4Snd" src="song4.mp3"></audio>
+	</div>
+</div>
+<div class="line">
+	<div class="button">
+	<img id="crew5" src="before5.png">
+	<audio id="crew5Snd" src="song5.mp3"></audio>
+	</div>
+	<div class="button">
+	<img id="crew6" src="before6.png">
+	<audio id="crew6Snd" src="song6.mp3"></audio>
+	</div>
+	<div class="button">
+	<img id="crew7" src="before7.png">
+	<audio id="crew7Snd" src="song7.mp3"></audio>
+	</div>
+	<div class="button">
+	<img id="crew8" src="before8.png">
+	<audio id="crew8Snd" src="song8.mp3"></audio>
+	</div>
+</div>
+</section>
+<footer>
+	<p>@__myeon__</p>
+</footer>
+<script type="text/javascript">
+	vol.value = 75;
+	vol.oninput = function(){
+	crew1Snd.volume = vol.value / 100;
+	crew2Snd.volume = vol.value / 100;
+	crew3Snd.volume = vol.value / 100;
+	crew4Snd.volume = vol.value / 100;
+	crew5Snd.volume = vol.value / 100;
+	crew6Snd.volume = vol.value / 100;
+	crew7Snd.volume = vol.value / 100;
+	crew8Snd.volume = vol.value / 100;
+	}
+
+	var state = false;
+
+	crew1.onclick = function(){
+		if(state){
+		crew1Snd.pause();
+		crew1.src = "before1.png";
+		state = false;
+		}else{
+			crew1Snd.play();
+			crew1.src = "after1.png";
+			state = true;
+		}
+	}
+	crew2.onclick = function(){
+		if(state){
+		crew2Snd.pause();
+		crew2.src = "before2.png";
+		state = false;
+		}else{
+			crew2Snd.play();
+			crew2.src = "after2.png";
+			state = true;
+		}
+	}
+	crew3.onclick = function(){
+		if(state){
+		crew3Snd.pause();
+		crew3.src = "before3.png";
+		state = false;
+		}else{
+			crew3Snd.play();
+			crew3.src = "after3.png";
+			state = true;
+		}
+	}
+	crew4.onclick = function(){
+		if(state){
+		crew4Snd.pause();
+		crew4.src = "before4.png";
+		state = false;
+		}else{
+			crew4Snd.play();
+			crew4.src = "after4.png";
+			state = true;
+		}
+	}
+	crew5.onclick = function(){
+		if(state){
+		crew5Snd.pause();
+		crew5.src = "before5.png";
+		state = false;
+		}else{
+			crew5Snd.play();
+			crew5.src = "after5.png";
+			state = true;
+		}
+	}
+	crew6.onclick = function(){
+		if(state){
+		crew6Snd.pause();
+		crew6.src = "before6.png";
+		state = false;
+		}else{
+			crew6Snd.play();
+			crew6.src = "after6.png";
+			state = true;
+		}
+	}
+	crew7.onclick = function(){
+		if(state){
+		crew7Snd.pause();
+		crew7.src = "before7.png";
+		state = false;
+		}else{
+			crew7Snd.play();
+			crew7.src = "after7.png";
+			state = true;
+		}
+	}
+	crew8.onclick = function(){
+		if(state){
+		crew8Snd.pause();
+		crew8.src = "before8.png";
+		state = false;
+		}else{
+			crew8Snd.play();
+			crew8.src = "after8.png";
+			state = true;
+		}
+	}
+
+</script>
+</body>
+</html>
